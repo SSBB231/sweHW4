@@ -69,6 +69,11 @@ class User
         this.email = email;
     }
 
+    removeFriendID(friendID)
+    {
+        this.friendUIDS.delete(friendID);
+    }
+
     getFriendUIDS()
     {
         return this.friendUIDS;
@@ -272,6 +277,28 @@ router.route('/users/:userID/friends/:friendID')
                     {
                         retrieved.addFriendID(req.params.friendID);
                         res.send("Added " + friend.getUserName() + " to "+ retrieved.getUserName()+"'s friends list");
+                    })
+                    .catch((error)=>
+                    {
+                        res.send("Friend was not found in users list. " + error);
+                    })
+            })
+            .catch((error)=>
+            {
+                res.send(error);
+            });
+    })
+    .delete((req, res)=>
+    {
+        getUserFromMap(req.params.userID)
+            .then((retrieved)=>
+            {
+                getUserFromMap(req.params.friendID)
+                    .then((friend)=>
+                    {
+                        //need to verify if still in friend's list to prevent unnecessary delete calls
+                        retrieved.removeFriendID(req.params.friendID);
+                        res.send("Removed " + friend.getUserName() + " from "+ retrieved.getUserName()+"'s friends list");
                     })
                     .catch((error)=>
                     {
