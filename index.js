@@ -345,8 +345,8 @@ function getGoing()
     {
         users = new Map();
         let newUser = new User("ssbb231", "jdboddenp@gmail.com");
-        let friend = new User("ckauffman", "ckauffman@cs.gmu.edu");
-        newUser.addFriendID("ckauffman");
+        let friend = new User("jlopez", "jlopez@cs.gmu.edu");
+        newUser.addFriendID("jlopez");
         users.set("ssbb231", newUser);
         users.set(friend.username.toLowerCase(), friend);
     }
