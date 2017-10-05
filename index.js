@@ -225,6 +225,14 @@ router.route('/users/:userID/email/:email')
     });
 //================================================================================================
 
+router.route('/')
+    .get((req, res)=>
+    {
+       res.send("This is the app's homescreen.\nPlease refer to Project Proposal document" +
+           " for details about this app's endpoint services.");
+    });
+
+
 //Routing with userID, and friendID===============================================================
 router.route('/users/:userID/friends/:friendID')
     .get((req, res)=>
