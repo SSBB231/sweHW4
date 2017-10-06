@@ -7,12 +7,10 @@ var router = express.Router();
 const port = process.env.PORT || 5000;
 
 //Firebase
-const firebase = require("firebase");
-let database = firebase.database();
+let firebase = require("firebase");
 
 //End App Globals=============================================
-
-var config = {
+let config = {
     apiKey: "AIzaSyA1JB3yBWizGxgFvi-yS2LkGpxyflytshQ",
     authDomain: "swehw4.firebaseapp.com",
     databaseURL: "https://swehw4.firebaseio.com",
@@ -22,16 +20,14 @@ var config = {
 };
 firebase.initializeApp(config);
 
+let database = firebase.database();
 //Global Data Structures======================================
 
 //Keeps track user within the cache
 let users;
 
-//Will point to current user
-let user;
-
 //Load from FireBase flag
-let loadFromFireBase = false;
+let loadFromFireBase = true;
 
 //End of Data Structures======================================
 
@@ -202,6 +198,7 @@ router.route('/users/:userID/')
             {
                 users.delete(retrieved.getUserName().toLowerCase());
                 res.send(`Successfully deleted ${retrieved.getUserName()}`);
+                deleteUserFromDatabase(retrieved);
             })
             .catch((error)=>
             {
@@ -220,6 +217,7 @@ router.route('/users/:userID/email/:email')
             {
                 retrieved.setEmail(req.params.email);
                 res.send("Successfully changed user's email\n"+retrieved.toString()+"\n");
+                saveUserToDatabase(retrieved);
             })
             .catch((error)=>
             {
@@ -289,6 +287,7 @@ router.route('/users/:userID/friends/:friendID')
                     .then((friend)=>
                     {
                         retrieved.addFriendID(req.params.friendID);
+                        saveUserToDatabase(retrieved);
                         res.send("Added " + friend.getUserName() + " to "+ retrieved.getUserName()+"'s friends list");
                     })
                     .catch((error)=>
@@ -312,6 +311,7 @@ router.route('/users/:userID/friends/:friendID')
                         //need to verify if still in friend's list to prevent unnecessary delete calls
                         retrieved.removeFriendID(req.params.friendID);
                         res.send("Removed " + friend.getUserName() + " from "+ retrieved.getUserName()+"'s friends list");
+                        saveUserToDatabase(retrieved);
                     })
                     .catch((error)=>
                     {
@@ -345,6 +345,26 @@ function getUserFromMap(userID)
 
 function downloadDataFromFireBase()
 {
+    let reference = database.ref('users/');
+    reference.once('value')
+        .then((snapshot)=>
+        {
+            let data = snapshot.val();
+            console.log(data);
+            users = new Map();
+
+            let user;
+            for(let element in data)
+            {
+                user = data[element];
+                console.log(user);
+                users.set(user.username, new User(user.username, user.email));
+            }
+        })
+        .catch((error)=>
+        {
+            console.log(error);
+        });
 
 }
 
@@ -370,10 +390,14 @@ function getGoing()
 
 function saveUserToDatabase(data)
 {
-    return database.ref('users/' + data.getUserName()).set(data);
+    database.ref('users/' + data.getUserName()).set(data);
+    //this part isn't working. Set is somehow not put into the tree.
+    database.ref('friends/'+data.getUserName()).set(data.getFriendUIDS());
+}
+
+function deleteUserFromDatabase(user)
+{
+    database.ref('users/').child(user.getUserName()).remove();
 }
 
 getGoing();
-
-
-
