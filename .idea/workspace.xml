@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb821ec2-33fd-4809-9f23-20334a981413" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.project proposal.odt#" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project proposal.odt" afterPath="$PROJECT_DIR$/project proposal.odt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,8 +24,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="348" column="38" lean-forward="false" selection-start-line="348" selection-start-column="38" selection-end-line="348" selection-end-column="38" />
+            <state relative-caret-position="72">
+              <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -61,6 +66,7 @@
       <find>new Pr</find>
       <find>_</find>
       <find>delete</find>
+      <find>resolve</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -90,10 +96,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="9" />
-    <option name="y" value="34" />
-    <option name="width" value="1354" />
-    <option name="height" value="483" />
+    <option name="width" value="1364" />
+    <option name="height" value="489" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -152,6 +156,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../hw3/theServer.js" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -178,15 +183,18 @@
       <workItem from="1507075321532" duration="5142000" />
       <workItem from="1507083336984" duration="1282000" />
       <workItem from="1507163493393" duration="6037000" />
-      <workItem from="1507203231046" duration="1533000" />
+      <workItem from="1507203231046" duration="1730000" />
+      <workItem from="1507226561315" duration="1234000" />
+      <workItem from="1507235624933" duration="307000" />
+      <workItem from="1507248720583" duration="1566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13994000" />
+    <option name="totallyTimeSpent" value="17298000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="34" width="1366" height="734" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="734" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -297,6 +305,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../hw3/theServer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3330">
@@ -317,8 +333,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="348" column="38" lean-forward="false" selection-start-line="348" selection-start-column="38" selection-end-line="348" selection-end-column="38" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hw3/theServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3348">
+          <caret line="186" column="21" lean-forward="false" selection-start-line="186" selection-start-column="15" selection-end-line="186" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1506399514883" expanded="true" signature="4127:4150" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="7627:7648" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="7753:7774" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="8874:8895" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9333:9354" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9415:9436" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9509:9534" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="10992:11001" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hw3/theServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3348">
+          <caret line="186" column="21" lean-forward="false" selection-start-line="186" selection-start-column="15" selection-end-line="186" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1506399514883" expanded="true" signature="4127:4150" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="7627:7648" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="7753:7774" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="8874:8895" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9333:9354" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9415:9436" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9509:9534" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="10992:11001" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hw3/theServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3330">
+          <caret line="186" column="21" lean-forward="false" selection-start-line="186" selection-start-column="15" selection-end-line="186" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1506399514883" expanded="true" signature="4127:4150" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="7627:7648" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="7753:7774" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="8874:8895" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9333:9354" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9415:9436" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="9509:9534" ph="{...}" />
+            <marker date="1506399514883" expanded="true" signature="10992:11001" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding />
         </state>
       </provider>

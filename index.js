@@ -6,8 +6,21 @@ const app = express();
 var router = express.Router();
 const port = process.env.PORT || 5000;
 
+//Firebase
+const firebase = require("firebase");
+let database = firebase.database();
+
 //End App Globals=============================================
 
+var config = {
+    apiKey: "AIzaSyA1JB3yBWizGxgFvi-yS2LkGpxyflytshQ",
+    authDomain: "swehw4.firebaseapp.com",
+    databaseURL: "https://swehw4.firebaseio.com",
+    projectId: "swehw4",
+    storageBucket: "swehw4.appspot.com",
+    messagingSenderId: "1080437453033"
+};
+firebase.initializeApp(config);
 
 //Global Data Structures======================================
 
@@ -169,7 +182,6 @@ router.route('/users/')
     });
 
 //=========================== Routing Simple Get and Delete ======================================
-
 router.route('/users/:userID/')
     .get((req, res)=>
     {
@@ -225,6 +237,7 @@ router.route('/users/:userID/email/:email')
             {
                 let newUser = new User(req.params.userID, req.params.email);
                 users.set(req.params.userID.toLowerCase(), newUser);
+                saveUserToDatabase(newUser);
                 res.send("Created new user successfully: " + newUser.toString());
             });
     });
@@ -355,5 +368,12 @@ function getGoing()
     app.listen(port);
 }
 
+function saveUserToDatabase(data)
+{
+    return database.ref('users/' + data.getUserName()).set(data);
+}
+
 getGoing();
+
+
 
